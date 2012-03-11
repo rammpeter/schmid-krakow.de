@@ -1,0 +1,76 @@
+<html>
+    <script type="text/javascript" src="http://dl.dropbox.com/u/66522656/belegungsliste_haus_else.js"></script>
+  ody>
+    <div class="shadow" style="height:600px; overflow-y:scroll; ">
+        <table id="dates" border="1" align="center" style="float: left;">
+        </table>
+        <!-- Sicherstellen, dass horiz. Scrollbar Sichtbarkeit nicht einschränkt bei IE-->
+        <!--[if IE]>
+            <div style="float: left; width: 17px;"></div>
+         <![endif]-->
+    </div>
+    <script type="text/javascript">
+        var heute = new Date();
+        var start_montag = heute;
+        while (start_montag.getDay() == 0 || start_montag.getDay() > 1){
+            start_montag = new Date(start_montag.getTime() - 24 * 60 * 60 * 1000);
+        }
+
+        var output = "";
+
+        output += '<tr><th colspan="7">Aktuelle Belegung des Ferienhaus</th></tr>';
+        output += '<tr><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th><th>Samstag</th><th>Sonntag</th></tr>';
+        output += '<tr>';
+
+        var tag = start_montag
+        var bgcolor = "";
+        var color   = "";
+        var tag_num   = "";     // Angabe T.M.Y
+        var belegt_status = "";
+        for(var i=0; i<700; i++){
+            if(tag.getMonth() % 2 == 0){
+                color = 'yellow';
+            }
+            else {
+                color = 'black';
+            }
+
+            tag_num = tag.getDate()+'.'+(tag.getMonth()+1)+'.'+tag.getFullYear();
+
+            bgcolor = "green";
+            belegt_status = "Noch frei für Sie";
+            if(belegung[tag_num] == 2){
+                bgcolor = "red";
+                belegt_status = "Leider belegt";
+            }
+            if(belegung[tag_num] == 1){
+                bgcolor = "lightgreen";
+                belegt_status = "Eventuell noch frei, bitte anfragen";
+            }
+            if(tag < heute){
+                bgcolor = 'white';
+                color = 'black';
+            }
+
+            output += '<td align="center" style="color: '+color+'; background-color: '+bgcolor+';" title="'+tag_num+' '+belegt_status+'">' +
+                    tag.getDate()+'.'+(tag.getMonth()+1)+
+                    '</td>';
+            if(tag.getDay() == 0){
+                output += '</tr><tr>';
+            }
+            tag = new Date(tag.getTime() + 24 * 60 * 60 * 1000);
+
+        }
+        output += '</tr>';
+        $('#dates').append(output)
+                .fadeTo('middle', 0.8, function() {
+                    // Animation complete
+                })
+                .css('background-color', '#FFFF99')
+        ;
+
+
+        $('#hugo').html(heute.getDate()+'.'+(heute.getMonth()+1)+'.'+heute.getFullYear()+' Wochentag: '+heute.getDay()   );
+    </script>
+</body>
+</html>

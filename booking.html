@@ -1,0 +1,65 @@
+<html>
+    <script type="text/javascript">
+
+        function sendAMail(id) {
+            var sendTo    = "info@kiefernhain.de";
+            var anreise   = $("#datum_von").val();
+            var abreise   = $("#datum_bis").val();
+            var personen  = $("#personen").val();
+            var anmerkung = $("#anmerkung").val();
+
+            var body = 'Bitte senden Sie mir ein Abgebot für das Ferienhaus Else\n' +
+                    'vom '+anreise+' bis '+abreise+' für '+personen+' Personen.'
+
+            body += anmerkung;
+            location.href = "mailto:" + sendTo + "?subject="+encodeURIComponent("Buchungsanfrage Ferienhaus Else")+"&body=" + encodeURIComponent(body);
+        }
+
+
+        $('#booking')
+                .fadeTo('middle', 0.8, function() {
+                    // Animation complete
+                })
+                .css('background-color', '#FFFF99')
+        ;
+
+
+        $("#datum_von").datepicker();
+        $("#datum_bis").datepicker();
+
+    </script>
+
+<body>
+    <div id="booking" class="shadow" style="padding: 10px;">
+        <h3>Bitte rufen Sie uns an unter Telefon 038457-22737 oder senden Sie uns eine Buchungsanfrage</h3>
+        <div style="float: left; padding: 10px;">
+            Anreise<br>
+            <input id="datum_von" type="text" size="12">
+        </div>
+        <div style="float: left; padding: 10px;">
+            Abreise<br>
+            <input id="datum_bis" type="text" size="12">
+        </div>
+        <div style="float: left; padding: 10px;">
+            Anzahl Personen<br>
+            <input id="personen" type="text" size="12">
+        </div>
+        <div style="clear: left; padding: 10px;">
+            Telefon-Nummer<br>
+            <input id="telefon" type="text" size="50">
+        </div>
+        <div style="clear: left; padding: 10px;">
+            E-Mail<br>
+            <input id="telefon" type="text" size="50">
+        </div>
+        <div style="clear: left; padding: 10px;">
+            Ihre Anmerkungen<br>
+            <textarea id="anmerkung" name="user_eingabe" cols="50" rows="10" /><br>
+        </div>
+        <input type="button" id="button_Abschicken" value="Per Mail versenden" onClick="sendAMail('inputTextField');"
+
+    </div>
+
+
+</body>
+</html>

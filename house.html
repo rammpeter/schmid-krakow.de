@@ -1,0 +1,66 @@
+<html>
+<body>
+<table width="100%">
+    <tr>
+        <td valign="top">
+            <div class="shadow" style="float: left; height:600px; overflow-x:hidden; overflow-y:scroll;">
+                <table id="bilderleiste"  cellspacing="10" >
+                </table>
+            </div>
+        </td>
+        <td>
+            <div id="bild_gross" style="float: left; top: 0px; padding:10px;"></div>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    var img_urls = [
+                [ "Blick vom See 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 3.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 4.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 5.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 6.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 7.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick vom See 8.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Haus von vorn.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Haus von vorn 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick zum See 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick zum See 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick zum See 3.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Blick zum See 4.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Stube 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Stube 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Stube 3.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Stube 4.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Kueche 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Flur.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Flur 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Bad 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Bad 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Bad 3.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Schlafzimmer 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Schlafzimmer 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Oben 1.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Oben 2.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Oben 3.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ],
+                [ "Oben 4.jpg", "Hier können weitere Erläuterungen zu dem konkreten Bild hinterlegt werden. Erklärungen zu den Räumen, Zimmer-Flächen etc." ]
+
+    ]
+
+
+
+    for(var i=0; i < img_urls.length; i++) {
+        img_url  = img_urls[i][0];
+        img_text = img_urls[i][1];
+        $('#bilderleiste').append('<tr><td><img id="bilderleiste_img_'+i+'" title="'+img_text+'" alt="'+img_url+'" src="'+img_url+'" width="120" class="shadow" style="cursor:pointer;" /></td></tr>');
+        $('#bilderleiste_img_'+i).hover(function(){
+                    var img_url = $(this).attr('src');
+                    $("#bild_gross").html('<img alt="Bild 1" src="'+img_url+'" width="100%" style="float: left;  min-width: 20px; " class="shadow"/>');
+                }
+        );
+    }
+
+</script>
+</body>
+</html>
