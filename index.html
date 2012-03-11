@@ -40,7 +40,8 @@
         var lastActiveMenuDiv = "welcome";    // zuerst gewähltes Div
 
         function menu_call(menu_entry){
-            var url = menu_entry+'.html'  // Aufgerufene Seite für Darstellung
+            var url = menu_entry+'.html';  // Aufgerufene Seite für Darstellung
+            $("*").css("cursor", "progress");
             $('#content').fadeOut('fast', function() {    // Ajax-Aufruf nach FadeOut
             // Animation complete
                 $.ajax({url: url,
@@ -55,10 +56,14 @@
                             ;
                         },
                         error: function(){
-                            var errmsg = 'Fehler beim Zugriff auf '+url
+                            var errmsg = 'Fehler beim Zugriff auf '+url;
                             alert(errmsg);
                             console.log(errmsg);
+                        },
+                        complete: function(){
+                            $("*").css("cursor", "auto");
                         }
+
                 });
             })
 
@@ -90,7 +95,7 @@
 </head>
 <body>
     <div id="header" class="shadow" style="float: left; width:100%; margin: 5px; margin-bottom: 20px;" >
-        <img class="shadow" src="Haus von vorn klein.jpg" width="160px" style="float:left; ">
+        <img alt="Haus klein" class="shadow" src="Haus von vorn klein.jpg" width="160px" style="float:left; ">
         <div style="float:left;"></div>
         <div style="float:left; padding: 20px;">
             <h1 class="shadow" style="background-color: green; color:yellow;" >Ferienhaus Else, Krakow am See</h1>
