@@ -1,7 +1,8 @@
 <html>
-    <script type="text/javascript" src="http://dl.dropbox.com/u/66522656/belegungsliste_haus_else.js"></script>
+    <script type="text/javascript" src="belegungsliste.js"></script>
 <body>
-    <div class="shadow" style="height:600px; overflow-y:scroll; ">
+
+    <div class="shadow" style="height:600px; overflow:scroll; ">
         <table id="dates" border="1" align="center" style="float: left;">
         </table>
         <!-- Sicherstellen, dass horiz. Scrollbar Sichtbarkeit nicht einschränkt bei IE-->
@@ -22,7 +23,7 @@
         output += '<tr><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th><th>Samstag</th><th>Sonntag</th></tr>';
         output += '<tr>';
 
-        var tag = start_montag;
+        var tag = start_montag
         var bgcolor = "";
         var color   = "";
         var tag_num   = "";     // Angabe T.M.Y

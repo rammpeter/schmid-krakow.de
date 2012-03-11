@@ -9,7 +9,7 @@
             var anmerkung = $("#anmerkung").val();
 
             var body = 'Bitte senden Sie mir ein Abgebot für das Ferienhaus Else\n' +
-                    'vom '+anreise+' bis '+abreise+' für '+personen+' Personen.'
+                    'vom '+anreise+' bis '+abreise+' für '+personen+' Personen.';
 
             body += anmerkung;
             location.href = "mailto:" + sendTo + "?subject="+encodeURIComponent("Buchungsanfrage Ferienhaus Else")+"&body=" + encodeURIComponent(body);
@@ -56,7 +56,7 @@
             Ihre Anmerkungen<br>
             <textarea id="anmerkung" name="user_eingabe" cols="50" rows="10" /><br>
         </div>
-        <input type="button" id="button_Abschicken" value="Per Mail versenden" onClick="sendAMail('inputTextField');"
+        <input type="button" id="button_Abschicken" value="Per Mail versenden" onClick="sendAMail('inputTextField');"/>
 
     </div>
 
