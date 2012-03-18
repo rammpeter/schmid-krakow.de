@@ -10,6 +10,7 @@
             <div style="float: left; width: 17px;"></div>
          <![endif]-->
     </div>
+
     <script type="text/javascript">
         var heute = new Date();
         var start_montag = heute;
@@ -23,7 +24,7 @@
         output += '<tr><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th><th>Samstag</th><th>Sonntag</th></tr>';
         output += '<tr>';
 
-        var tag = start_montag
+        var tag = start_montag;
         var bgcolor = "";
         var color   = "";
         var tag_num   = "";     // Angabe T.M.Y
@@ -69,9 +70,6 @@
                 })
                 .css('background-color', '#FFFF99')
         ;
-
-
-        $('#hugo').html(heute.getDate()+'.'+(heute.getMonth()+1)+'.'+heute.getFullYear()+' Wochentag: '+heute.getDay()   );
     </script>
 </body>
 </html>
