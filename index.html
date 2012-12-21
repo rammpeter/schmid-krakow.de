@@ -13,7 +13,7 @@
     <script type="text/javascript">
         var belegung = {};  // Initialisierung, Details kommen von DropBox
     </script>
-    <script type="text/javascript" src="http://dl.dropbox.com/u/66522656/belegungsliste_haus_else.js"></script>
+    <!-- <script type="text/javascript" src="http://dl.dropbox.com/u/66522656/belegungsliste_haus_else.js"></script> -->
 
 
     <script type="text/javascript">
@@ -94,39 +94,40 @@
 
 </head>
 <body onload="menu_call('welcome');">
-    <div id="header" class="shadow" style="float: left; width:100%; margin: 5px; margin-bottom: 20px; padding: 10px;" >
-        <img alt="Haus Milan" class="shadow" src="images/Milan/Haus von vorn klein.jpg" height="100px" style="float:left; ">
-        <div style="float:left; padding: 20px;"></div>
-        <img alt="Haus Pinguin" class="shadow" src="images/Pinguin/FamilieElsePingy112.jpg" height="100px" style="float:left; ">
-        <div style="float:left; padding: 20px;"></div>
-        <div style="float:left;  position: relative;">
-            <div style="position: absolute; background-color: #FFFFCC; opacity: 0.6; height: 100px; width: 100%; z-index: -1;"></div>
-            <div style="padding: 20px;">
-                <span class="" style="color:darkgreen; font-size: 30pt;" ><b>Ferienh&auml;user Milan und Pinguin</b></span>
-            </div>
-        </div>
-    </div>
-    <div style="clear: both;">
-        <table width="100%">
-            <tr>
-                <td valign="top" style="width: 190px; min-width: 190px;">
-                    <table cellspacing="20px" cellpadding="0px" style="color: yellow; ">
-                        <tbody>
-                            <tr><td class="menu_entry" onclick="menu_call('welcome');"      >Willkommen</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('haus_milan');"   >Haus Milan</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('haus_pinguin');" >Haus Pinguin</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('prices');"       >Die Preise</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('dates');"        >Freie Termine</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('booking');"      >Zur Buchung</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('impressum');"    >Impressum</td></tr>
-                        </tbody>
+    <table width="100%">
+        <tr>
+            <td colspan="2">
+                <div class="shadow" style="position: relative;">
+                    <div style="position: absolute; z-index: -1; background-color: #FFFFCC; width: 100%; height: 100%; opacity: 0.6;"></div>
+                    <table width="100%">
+                        <tr>
+                            <td style="padding: 10px;"><img alt="Haus Milan" class="shadow" src="images/Milan/Haus von vorn klein.jpg" height="100px"></td>
+                            <td style="padding: 10px;"><img alt="Haus Pinguin" class="shadow" src="images/Pinguin/FamilieElsePingy112.jpg" height="100px"></td>
+                            <td align="center" valign="middle"><span style="color:darkgreen; font-size: 30pt; padding: 20px;" ><b>Ferienh&auml;user Milan und Pinguin</b></span></td>
+                        </tr>
                     </table>
-                </td>
-                <td valign="top">
-                    <div id="content"></div>
-                </td>
-            </tr>
-        </table>
-    </div>
+                </div>
+            </td>
+        </tr>
+        <tr><td><br></td></tr>
+        <tr>
+            <td valign="top" style="width: 190px; min-width: 190px;">
+                <table cellspacing="20px" cellpadding="0px" style="color: yellow; ">
+                    <tbody>
+                        <tr><td class="menu_entry" onclick="menu_call('welcome');"      >Willkommen</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('haus_milan');"   >Haus Milan</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('haus_pinguin');" >Haus Pinguin</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('prices');"       >Die Preise</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('dates');"        >Freie Termine</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('booking');"      >Zur Buchung</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('impressum');"    >Impressum</td></tr>
+                    </tbody>
+                </table>
+            </td>
+            <td valign="top">
+                <div id="content"></div>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
