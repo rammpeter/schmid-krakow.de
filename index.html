@@ -8,7 +8,7 @@
     <script type="text/javascript" src="jquery.backstretch.min.js"></script>
     <script type="text/javascript" src="jquery-ui-1.8.18.custom.min.js"></script>
     <link rel="stylesheet" href="jquery-ui-1.8.18.custom.css" type="text/css" media="all" />
-
+    <link rel="stylesheet" href="default.css" type="text/css" media="all" />
 
     <script type="text/javascript">
         var belegung = {};  // Initialisierung, Details kommen von DropBox
@@ -17,7 +17,7 @@
 
 
     <script type="text/javascript">
-        $.backstretch("background.jpg");
+        $.backstretch("background-light.png");
         $.datepicker.regional['de'] = {clearText: 'löschen', clearStatus: 'aktuelles Datum löschen',
                 closeText: 'schließen', closeStatus: 'ohne Änderungen schließen',
                 prevText: '<zurück', prevStatus: 'letzten Monat zeigen',
@@ -94,11 +94,16 @@
 
 </head>
 <body onload="menu_call('welcome');">
-    <div id="header" class="shadow" style="float: left; width:100%; margin: 5px; margin-bottom: 20px;" >
-        <img alt="Haus klein" class="shadow" src="Haus von vorn klein.jpg" width="160px" style="float:left; ">
-        <div style="float:left;"></div>
-        <div style="float:left; padding: 20px;">
-            <h1 class="shadow" style="background-color: green; color:yellow;" >Ferienhaus Else, Krakow am See</h1>
+    <div id="header" class="shadow" style="float: left; width:100%; margin: 5px; margin-bottom: 20px; padding: 10px;" >
+        <img alt="Haus klein" class="shadow" src="Haus von vorn klein.jpg" height="100px" style="float:left; ">
+        <div style="float:left; padding: 20px;"></div>
+        <img alt="Haus klein" class="shadow" src="images/Pinguin/FamilieElsePingy112.jpg" height="100px" style="float:left; ">
+        <div style="float:left; padding: 20px;"></div>
+        <div style="float:left;  position: relative;">
+            <div style="position: absolute; background-color: #FFFFCC; opacity: 0.6; height: 100px; width: 100%; z-index: -1;"></div>
+            <div style="padding: 20px;">
+                <span class="" style="color:darkgreen; font-size: 30pt;" ><b>Ferienh&auml;user Milan und Pinguin</b></span>
+            </div>
         </div>
     </div>
     <div style="clear: both;">
@@ -107,12 +112,12 @@
                 <td valign="top" style="width: 190px; min-width: 190px;">
                     <table cellspacing="20px" cellpadding="0px" style="color: yellow; ">
                         <tbody>
-                            <tr><td class="menu_entry" onclick="menu_call('welcome');"   >Willkommen</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('house');"     >Das Haus</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('prices');"    >Die Preise</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('dates');"     >Freie Termine</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('booking');"   >Zur Buchung</td></tr>
-                            <tr><td class="menu_entry" onclick="menu_call('impressum');" >Impressum</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('welcome');"      >Willkommen</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('haus_milan');"   >Haus Milan</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('prices');"       >Die Preise</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('dates');"        >Freie Termine</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('booking');"      >Zur Buchung</td></tr>
+                            <tr><td class="menu_entry" onclick="menu_call('impressum');"    >Impressum</td></tr>
                         </tbody>
                     </table>
                 </td>
