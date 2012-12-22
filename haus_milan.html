@@ -1,5 +1,37 @@
-<html>
-<body>
+<div style="position: relative;">
+    <div class="shadow" width="100%" style="width:100%; height: 100%; background-color: #99CC99; position:absolute; top:0px; left:0px; z-index:1; opacity: 0.6;">
+    </div>
+    <table width="100%" style="position: relative; z-index: 2;">
+        <tr>
+            <td valign="middle" width="50%" style="padding: 10px;">
+                <img class="shadow" src="images/Milan/FamilieElsePingy108.jpg" width="90%">
+            </td>
+            <td valign="middle" width="50%" style="padding: 10px;">
+                Unser 2012 erbautes modern eingerichtetes Ferienhaus befindet sich 50m vom See entfernt und bietet eine schöne Terasse und einen Balkon mit Seeblick.
+                Das Haus befindet sich inmitten eines 340qm großen Gartengrundstückes in sonniger und ruhiger Lage.
+                Zum Haus gehören Gartenmöbel sowie ein Grill.
+                PKW-Stellplätze für 2 Fahrzeuge sind vorhanden.
+                Haustiere auf Anfrage.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 10px;">
+                - 95qm Wohnfläche für bis zu 6 Personen<br/>
+                - Wohnzimmer mit SAT-TV<br/>
+                - Küche, Herd mit Ceranfeld, Geschirrspüler, Kühlschrank, Mikrowelle, Toaster usw.<br/>
+                - 3 Schlafzimmer mit Doppelbetten<br/>
+                - 2 x Dusche/WC<br/>
+                - Kaminofen<br/>
+                - Carport<br/>
+                - Bettwäsche auf Wunsch<br/>
+                - Ruderboot und Fahrradverleih möglich<br/>
+                - Einkaufsmöglichkeit ca. 2km<br/>
+                - nächste Gaststätte 200m
+            </td>
+        </tr>
+    </table>
+</div>
+
 <table width="100%">
     <tr>
         <td valign="top">
@@ -48,18 +80,19 @@
     ]
 
 
+    function show_milan_image(img_url){                                         // Voll-Anzeige eines Bildes
+        $("#bild_gross").html('<img alt="Bild 1" src="'+img_url+'" width="100%" style="float: left;  min-width: 20px; " class="shadow"/>');
+    }
 
     for(var i=0; i < img_urls.length; i++) {
         img_url  = img_urls[i][0];
         img_text = img_urls[i][1];
         $('#bilderleiste').append('<tr><td><img id="bilderleiste_img_'+i+'" title="'+img_text+'" alt="'+img_url+'" src="'+img_url+'" width="120" class="shadow" style="cursor:pointer;" /></td></tr>');
         $('#bilderleiste_img_'+i).hover(function(){
-                    var img_url = $(this).attr('src');
-                    $("#bild_gross").html('<img alt="Bild 1" src="'+img_url+'" width="100%" style="float: left;  min-width: 20px; " class="shadow"/>');
+                    show_milan_image($(this).attr('src'));                      // URL des Vorschau-Bildes selbst
                 }
         );
     }
+    show_milan_image(img_urls[0][0]);                                           // erstes Bild gleich auf Seite anzeigen
 
 </script>
-</body>
-</html>
