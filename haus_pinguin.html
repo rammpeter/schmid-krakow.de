@@ -32,7 +32,7 @@
         </tr>
     </table>
 </div>
-
+<!--
 <table width="100%">
     <tr>
         <td valign="top">
@@ -45,7 +45,9 @@
             <div id="bild_gross" style="float: left; top: 0px; padding:10px;"></div>
         </td>
     </tr>
-</table>
+</table> -->
+<div id="slightshow"></div>
+
 <script type="text/javascript">
     var img_urls = [
         [ "images/Pinguin/FamilieElsePingy112.jpg", "Haus Pinguin" ],
@@ -58,7 +60,7 @@
 
     ]
 
-
+    /*
     function show_milan_image(img_url){                                         // Voll-Anzeige eines Bildes
         $("#bild_gross").html('<img alt="Bild 1" src="'+img_url+'" width="100%" style="float: left;  min-width: 20px; " class="shadow"/>');
     }
@@ -73,5 +75,22 @@
         );
     }
     show_milan_image(img_urls[0][0]);                                           // erstes Bild gleich auf Seite anzeigen
+    */
+
+    for(var i=0; i < img_urls.length; i++) {
+        img_url  = img_urls[i][0];
+        img_text = img_urls[i][1];
+        $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
+    }
+    $(function(){
+        $('#slightshow a').lightBox({
+            overlayOpacity: 0.6,
+            txtImage:       'Bild',
+            txtOf:          'von',
+            imageBtnClose: 'images/mail_delete.png',
+            imageBtnPrev: 'images/back.png',
+            imageBtnNext: 'images/forward.png'
+        });
+    });
 
 </script>
