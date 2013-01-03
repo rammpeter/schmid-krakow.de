@@ -5,4 +5,22 @@ echo "
   mput *.js
   mput *.css
   mput *.jpg
+  mput *.png
+
+  cd images
+  lcd images
+  mput *.*
+
+  cd Allgemein
+  lcd Allgemein
+  mput *.*
+
+  cd ../Milan
+  lcd ../Milan
+  mput *.*
+
+  cd ../Pinguin
+  lcd ../Pinguin
+  mput *.*
+
 " | ftp ftp://u68187099:xz3411sum492@www.schmid-krakow.de
