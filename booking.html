@@ -7,8 +7,14 @@
             var personen  = $("#personen").val();
             var anmerkung = $("#anmerkung").val();
 
-            var body = 'Bitte senden Sie mir ein Abgebot für das Ferienhaus Else\n' +
-                    'vom '+anreise+' bis '+abreise+' für '+personen+' Personen.';
+            var body = 'Bitte senden Sie mir ein Abgebot für das Ferienhaus '+$("#ferienhaus").val()+'\n' +
+                            'vom '+anreise+' bis '+abreise+' für '+$("#erwachsene").val()+' Erwachsene und '+$("#kinder").val()+' Kinder.\n\n'+
+                            $("#vorname").val()+' '+$("#nachname").val()+'\n'+
+                            $("#strasse").val()+' '+$("#hausnummer").val()+'\n'+
+                            $("#plz").val()+' '+$("#ort").val()+'\n\n'+
+                            'Tel.: '+$("#telefon").val()+'\n'+
+                            'Mail: '+$("#mail").val()+'\n\n'
+            ;
 
             body += anmerkung;
             location.href = "mailto:" + sendTo + "?subject="+encodeURIComponent("Buchungsanfrage Ferienhaus Else")+"&body=" + encodeURIComponent(body);
@@ -208,6 +214,13 @@
                 <option value="20" label="20">20</option>
             </select>
         </div>
+        <div style="float: left; padding-left: 10px;">
+            Ferienhaus<br>
+            <select id="ferienhaus" size="1" maxlength="50" title="Ferienhaus">
+                <option value="Milan" label="Milan" selected>Milan</option>
+                <option value="Pinguin" label="Pinguin">Pinguin</option>
+            </select>
+        </div>
         <div style="clear: left; float: left; padding: 10px;">
             Vorname<br>
             <input id="vorname" type="text" size="20">
@@ -217,14 +230,6 @@
             <input id="nachname" type="text" size="20">
         </div>
         <div style="clear: left; float: left; padding: 10px;">
-            PLZ<br>
-            <input id="plz" type="text" size="5">
-        </div>
-        <div style="float: left; padding: 10px;">
-            Ort<br>
-            <input id="ort" type="text" size="35">
-        </div>
-        <div style="clear: left; float: left; padding: 10px;">
             Straße<br>
             <input id="strasse" type="text" size="35">
         </div>
@@ -232,13 +237,21 @@
             Nr.<br>
             <input id="hausnummer" type="text" size="5">
         </div>
+        <div style="clear: left; float: left; padding: 10px;">
+            PLZ<br>
+            <input id="plz" type="text" size="5">
+        </div>
+        <div style="float: left; padding: 10px;">
+            Ort<br>
+            <input id="ort" type="text" size="35">
+        </div>
         <div style="clear: left; padding: 10px;">
             Telefon-Nummer<br>
             <input id="telefon" type="text" size="46">
         </div>
         <div style="clear: left; padding: 10px;">
             E-Mail<br>
-            <input id="telefon" type="text" size="46">
+            <input id="mail" type="text" size="46">
         </div>
         <div style="clear: left; padding: 10px;">
             Ihre Anmerkungen<br>
