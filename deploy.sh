@@ -4,8 +4,6 @@ echo "
   mput *.html
   mput *.js
   mput *.css
-  mput *.jpg
-  mput *.png
 
   cd images
   lcd images
