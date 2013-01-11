@@ -38,5 +38,38 @@
                     <a href="http://www.kuchelmiss.de/sehenswuerdigkeiten.html" target="_blank"><img src="images/next.png"></a></li>
             </ul>
         </div>
+        <div style="padding: 10px;">
+            <h3 align="center">Unternehmen Sie mit unserer kleinen Dia-Show eine Reise in die Umgebung</h3>
+            <div id="slightshow"></div>
+            <script type="text/javascript">
+                var img_urls = [
+                    [ "images/Umgebung/Klatschmohn.jpg",        "Natur ..." ],
+                    [ "images/Umgebung/Krakow-See1.jpg",        "Friedlicher Krakower See" ],
+                    [ "images/Umgebung/See1.jpg",               "Anlegestelle" ],
+                    [ "images/Umgebung/KrakowSee2.jpg",         "Anlegestelle" ],
+                    [ "images/Umgebung/Krakow-Joernberg.jpg",   "Aussichtsturm am Jörnberg" ],
+                    [ "images/Umgebung/Pilz.jpg",               "Wanderers Ruh am großen Pilz am Buchenberg" ],
+                    [ "images/Umgebung/Buchenberg.jpg",         "Steinkreis am Buchenberg" ],
+                ]
+
+
+                for(var i=0; i < img_urls.length; i++) {
+                    img_url  = img_urls[i][0];
+                    img_text = img_urls[i][1];
+                    $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
+                }
+                $(function(){
+                    $('#slightshow a').lightBox({
+                        overlayOpacity: 0.6,
+                        txtImage:       'Bild',
+                        txtOf:          'von',
+                        imageBtnClose: 'images/mail_delete.png',
+                        imageBtnPrev: 'images/back.png',
+                        imageBtnNext: 'images/forward.png'
+                    });
+                });
+
+            </script>
+        </div>
     </div>
 </div>
