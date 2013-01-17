@@ -4,6 +4,7 @@ echo "
   mput *.html
   mput *.js
   mput *.css
+  mput .htaccess
 
   cd images
   lcd images
@@ -19,6 +20,14 @@ echo "
 
   cd ../Pinguin
   lcd ../Pinguin
+  mput *.*
+
+  cd ../Ausflugsziele
+  lcd ../Ausflugsziele
+  mput *.*
+
+  cd ../Umgebung
+  lcd ../Umgebung
   mput *.*
 
 " | ftp ftp://u68187099:xz3411sum492@www.schmid-krakow.de

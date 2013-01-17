@@ -1,0 +1,90 @@
+<div style="position: relative;">
+    <div class="shadow opaque" style="width:100%; height: 100%; background-color: #99CC99; position:absolute; top:0px; left:0px; z-index:1;">
+    </div>
+    <div style="position: relative; z-index: 2;">
+        <div align="center" style="padding: 10px;">
+            <h2>Ausflugsziele</h2>
+            Krakow am See, in der Mitte Mecklenburgs gelegen, bietet Ihnen die vielfältige touristische Attraktionen unseres Landes als Tagesziele.
+            Von der Seenlandschaft der Mecklenburger Schweiz bis zur Ostsee mit Stränden und den Hansestädten Wismar, Rostock und Stralsund und zur Landeshauptstadt Schwerin.
+        </div>
+        <div style="padding: 10px;">
+            <h3 align="center">Lohnende Ziele</h3>
+            <ul>
+                <li>Krakow am See (Schifffahrt, Halbinsel Jörnberg mit historischer Badeanstalt und Aussichtsturm, Heimatstube, Buchdruckermuseum, Synagoge, Wetterpilz und Findlingsgarten)
+                    <a href="http://www.krakow-am-see.de" target="_blank"><img src="images/next.png"></a></li>
+                <li>Barlachstadt Güstrow (Natur und Umweltpark mit Aquatunnel, Spaßbad "Oase", Schloss)
+                    <a href="http://www.guestrow.de/tourismus-kultur/" target="_blank"><img src="images/next.png"></a></li>
+                <li>Malchow (Schifffahrt, Affenwald, Sommerrodelbahn)</li>
+                <li>Waren/Müritz (Schifffahrt, Müritzeum
+                    <a href="http://www.mueritz-museum.de" target="_blank"><img src="images/next.png"></a>, Bärenwald
+                    <a href="http://www.baerenwald-mueritz.de" target="_blank"><img src="images/next.png"></a>)
+                    </li>
+                <li>Schwerin (Schloss, Museum)
+                    <a href="http://www.schwerin.com/Kultur-begegnen/Sehenswuerdigkeiten" target="_blank"><img src="images/next.png"></a></li>
+                <li>Alt-Sammit (Reiten)
+                    <a href="http://de.wikipedia.org/wiki/Alt_Sammit" target="_blank"><img src="images/next.png"></a></li>
+                <li>Rostock-Warnemünde (Überseehafen, Ostseestrand)
+                    <a href="http://www.rostock.de/tourismus/sehenswuerdigkeiten/" target="_blank"><img src="images/next.png"></a></li>
+                <li>Dobbertin (Kloster)
+                    <a href="http://www.kloster-dobbertin.de/sehenswert/sehenswert.htm" target="_blank"><img src="images/next.png"></a></li>
+                <li>Groß-Raden (Slawisches Museum)
+                    <a href="http://www.gross-raden.de" target="_blank"><img src="images/next.png"></a></li>
+                <li>Jabel (Wisentgehege)
+                    <a href="http://www.wisentinsel.de" target="_blank"><img src="images/next.png"></a></li>
+                <li>Kuchelmiß (Nebeldurchbruchstal mit historischer Wassermühle)
+                    <a href="http://www.kuchelmiss.de/sehenswuerdigkeiten.html" target="_blank"><img src="images/next.png"></a></li>
+            </ul>
+        </div>
+        <div style="padding: 10px;">
+            <h3 align="center">Unternehmen Sie mit unserer kleinen Dia-Show eine Reise in die weitere Umgebung</h3>
+            <div id="slightshow"></div>
+            <script type="text/javascript">
+                var img_urls = [
+                    [ "images/Umgebung/Klatschmohn.jpg",        "Natur ..." ],
+                    [ "images/Umgebung/Krakow-See1.jpg",        "Friedlicher Krakower See" ],
+                    [ "images/Umgebung/See1.jpg",               "Anlegestelle" ],
+                    [ "images/Umgebung/KrakowSee2.jpg",         "Anlegestelle" ],
+                    [ "images/Umgebung/Krakow-Joernberg.jpg",   "Aussichtsturm am Jörnberg" ],
+                    [ "images/Umgebung/Pilz.jpg",               "Wanderers Ruh am großen Pilz am Buchenberg" ],
+                    [ "images/Umgebung/Buchenberg.jpg",         "Steinkreis am Buchenberg" ],
+                    [ "images/Umgebung/Krakow-Waldhaus.jpg",    "Gaststätte Waldhaus in unmittelbarer Umgebung" ],
+                    [ "images/Umgebung/Bootshaeuser.jpg",       "Bootshäuser am Krakower See" ],
+                    [ "images/Umgebung/Aquarium.jpg",           "Aquarium" ],
+                    [ "images/Umgebung/Moewen.jpg",             "Die Möwen" ],
+                    [ "images/Umgebung/Park.jpg",               "Im Park" ],
+                    [ "images/Umgebung/Baeren.jpg",             "Die Bären von ..." ],
+                    [ "images/Umgebung/Bootshaus.jpg",          "Bootshaus ..." ],
+                    [ "images/Umgebung/Kornfeld.jpg",           "Kornfeld" ],
+                    [ "images/Umgebung/Badestelle.jpg",         "eine Badestelle am Krakower See" ],
+                    [ "images/Umgebung/Krakow-Seekueste.jpg",   "Die cote azur? ... Krakow" ],
+                    [ "images/Umgebung/Borgwall-Sturm1.jpg",    "Die Insel Borgwall im Krakower See" ],
+                    [ "images/Umgebung/Sturm.jpg",              "Schlechtes Wetter?" ],
+                    [ "images/Umgebung/Nebeltal.jpg",           "Im Durchbruchstal der Nebel" ],
+                    [ "images/Umgebung/Hafen.jpg",              "Im Hafen von ..." ],
+                    [ "images/Umgebung/Wehr.jpg",               "Das Wehr in ..." ],
+                    [ "images/Umgebung/Rostock-AlterStrom.jpg", "Rostock-Warnemünde: der alte Strom" ],
+                    [ "images/Umgebung/Schwaene.jpg",           "Schwäne" ],
+                    [ "images/Umgebung/Schwerin-Schloss.jpg",   "Das Residenzschloss in Schwerin, der heutige Landtag unseres Landes" ]
+                ]
+
+
+                for(var i=0; i < img_urls.length; i++) {
+                    img_url  = img_urls[i][0];
+                    img_text = img_urls[i][1];
+                    $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
+                }
+                $(function(){
+                    $('#slightshow a').lightBox({
+                        overlayOpacity: 0.6,
+                        txtImage:       'Bild',
+                        txtOf:          'von',
+                        imageBtnClose: 'images/mail_delete.png',
+                        imageBtnPrev: 'images/back.png',
+                        imageBtnNext: 'images/forward.png'
+                    });
+                });
+
+            </script>
+        </div>
+    </div>
+</div>
