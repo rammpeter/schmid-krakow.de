@@ -1,0 +1,32 @@
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>http://www.schmid-krakow.de/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/ausflugsziele.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/booking.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/haus_milan.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/haus_pinguin.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/impressum.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/prices.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/umgebung.html</loc>
+  </url>
+  <url>
+    <loc>http://www.schmid-krakow.de/welcome.html</loc>
+  </url>
+</urlset>
