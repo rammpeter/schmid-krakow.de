@@ -1,36 +1,39 @@
 <div style="position: relative;">
     <div class="shadow opaque" style="width:100%; height: 100%; background-color: #99CC99; position:absolute; top:0px; left:0px; z-index:1;">
     </div>
-    <table width="100%" style="position: relative; z-index: 2;">
-        <tr>
-            <td valign="middle" width="50%" style="padding: 10px;">
-                <img class="shadow" src="images/Pinguin/Haus_Pinguin Terrasse.jpg" width="90%"/>
-            </td>
-            <td valign="middle" width="50%" style="padding: 10px;">
-                <h2>Haus 'Pinguin'</h2>
-                Das 2006 erbaute gemütlich eingerichtete Ferienhaus verfügt über eine große Sonnenterrasse und befindet sich ca. 60m vom See entfernt.
-                Es steht in ruhiger Lage auf einem 300qm großen Gartengrundstück.
-                Gartenmöbel und Grill sowie ein PKW-Stellplatz sind vorhanden.
-                Haustiere auf Anfrage.
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 10px;">
-                <ul>
-                    <li>30qm Wohnfläche für bis zu 3 Personen</li>
-                    <li>Wohnzimmer mit SAT-TV</li>
-                    <li>kleine Küche, Herd mit E-Kochplatten, Kühlschrank, Mikrowelle, Toaster, Kaffeemaschine</li>
-                    <li>Schlafzimmer mit Doppelbett und Einzelbett</li>
-                    <li>Dusche/WC</li>
-                    <li>Kaminofen</li>
-                    <li>Bettwäsche auf Anfrage</li>
-                    <li>Ruderboot und Fahrradverleih möglich</li>
-                    <li>Einkaufsmöglichkeit ca. 2km</li>
-                    <li>nächste Gaststätte 200m</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <div style="position: relative; z-index: 2;">
+        <table width="100%" >
+            <tr>
+                <td valign="middle" width="50%" style="padding: 10px;">
+                    <img class="shadow" src="images/Pinguin/Haus_Pinguin Terrasse.jpg" width="90%"/>
+                </td>
+                <td valign="middle" width="50%" style="padding: 10px;">
+                    <h2>Haus 'Pinguin'</h2>
+                    Das 2006 erbaute gemütlich eingerichtete Ferienhaus verfügt über eine große Sonnenterrasse und befindet sich ca. 60m vom See entfernt.
+                    Es steht in ruhiger Lage auf einem 300qm großen Gartengrundstück.
+                    Gartenmöbel und Grill sowie ein PKW-Stellplatz sind vorhanden.
+                    Haustiere auf Anfrage.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding: 10px;">
+                    <ul>
+                        <li>30qm Wohnfläche für bis zu 3 Personen</li>
+                        <li>Wohnzimmer mit SAT-TV</li>
+                        <li>kleine Küche, Herd mit E-Kochplatten, Kühlschrank, Mikrowelle, Toaster, Kaffeemaschine</li>
+                        <li>Schlafzimmer mit Doppelbett und Einzelbett</li>
+                        <li>Dusche/WC</li>
+                        <li>Kaminofen</li>
+                        <li>Bettwäsche auf Anfrage</li>
+                        <li>Ruderboot und Fahrradverleih möglich</li>
+                        <li>Einkaufsmöglichkeit ca. 2km</li>
+                        <li>nächste Gaststätte 200m</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <div id="slightshow"/>
+    </div>
 </div>
 <!--
 <table width="100%">
@@ -46,7 +49,6 @@
         </td>
     </tr>
 </table> -->
-<div id="slightshow"/>
 
 <script type="text/javascript">
     var img_urls = [
@@ -61,21 +63,6 @@
         [ "images/Pinguin/PinguinImWinter.jpg",                 "Haus Pinguin im Winter" ]
     ]
 
-
-    for(var i=0; i < img_urls.length; i++) {
-        img_url  = img_urls[i][0];
-        img_text = img_urls[i][1];
-        $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
-    }
-    $(function(){
-        $('#slightshow a').lightBox({
-            overlayOpacity: 0.6,
-            txtImage:       'Bild',
-            txtOf:          'von',
-            imageBtnClose: 'images/mail_delete.png',
-            imageBtnPrev: 'images/back.png',
-            imageBtnNext: 'images/forward.png'
-        });
-    });
+    lightBox_SlideShow("slightshow", img_urls);
 
 </script>

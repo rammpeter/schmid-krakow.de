@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="author" content="Peter Ramm">
     <meta name="description" content="Sie suchen Ruhe und Entspannung? Wir bieten Ihnen zwei Ferienhäuser in malerischer Lage am Krakower See im Herzen Mecklenburgs">
+    <meta name="keywords" lang="de" content="Urlaub, Ferien, Angeln, Baden, Ferienhaus, Ferienwohnung, Bungalow, Unterkunft, Übernachtung, Mecklenburg, Güstrow, Krakow, Krakow am See, Krakower See, Sonnenschein">
     <title>Ferienh&auml;user 'Milan' und 'Pinguin' in Krakow am See, Mecklenburg</title>
 
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
@@ -73,6 +75,39 @@
             })
 
         }
+
+        // Test auf tablet order iPad
+        var supportsTouch = null;
+        function isTouchDevice(){
+            if (supportsTouch == null){
+                supportsTouch = 'ontouchstart' in window || 'onmsgesturechange' in window;
+            }
+            return supportsTouch;
+        }
+
+        // Ausgabe slideshow per lightBox, Parameter: Name des DIVs, Array mit URL und Text zum Bild
+        function lightBox_SlideShow(div_name, img_urls){
+            for(var i=0; i < img_urls.length; i++) {
+                img_url  = img_urls[i][0];
+                img_text = img_urls[i][1];
+                $('#'+div_name).append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
+            }
+
+            lightBox_options = {
+                overlayOpacity: 0.6,
+                txtImage:       'Bild',
+                txtOf:          'von',
+                imageBtnClose: 'images/mail_delete.png',
+                imageBtnPrev: 'images/back.png',
+                imageBtnNext: 'images/forward.png',
+            }
+
+            if (isTouchDevice())
+                lightBox_options['fixedNavigation'] = true;         // Navigations-Pfeile auf tablets immer einblenden
+
+            $('#'+div_name+' a').lightBox(lightBox_options);
+        }
+
     </script>
 
     <style type="text/css">

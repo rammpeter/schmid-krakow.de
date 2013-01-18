@@ -40,50 +40,34 @@
             <div id="slightshow"></div>
             <script type="text/javascript">
                 var img_urls = [
-                    [ "images/Umgebung/Klatschmohn.jpg",        "Natur ..." ],
-                    [ "images/Umgebung/Krakow-See1.jpg",        "Friedlicher Krakower See" ],
-                    [ "images/Umgebung/See1.jpg",               "Anlegestelle" ],
-                    [ "images/Umgebung/KrakowSee2.jpg",         "Anlegestelle" ],
-                    [ "images/Umgebung/Krakow-Joernberg.jpg",   "Aussichtsturm am Jörnberg" ],
-                    [ "images/Umgebung/Pilz.jpg",               "Wanderers Ruh am großen Pilz am Buchenberg" ],
-                    [ "images/Umgebung/Buchenberg.jpg",         "Steinkreis am Buchenberg" ],
-                    [ "images/Umgebung/Krakow-Waldhaus.jpg",    "Gaststätte Waldhaus in unmittelbarer Umgebung" ],
-                    [ "images/Umgebung/Bootshaeuser.jpg",       "Bootshäuser am Krakower See" ],
-                    [ "images/Umgebung/Aquarium.jpg",           "Aquarium" ],
-                    [ "images/Umgebung/Moewen.jpg",             "Die Möwen" ],
-                    [ "images/Umgebung/Park.jpg",               "Im Park" ],
-                    [ "images/Umgebung/Baeren.jpg",             "Die Bären von ..." ],
-                    [ "images/Umgebung/Bootshaus.jpg",          "Bootshaus ..." ],
-                    [ "images/Umgebung/Kornfeld.jpg",           "Kornfeld" ],
-                    [ "images/Umgebung/Badestelle.jpg",         "eine Badestelle am Krakower See" ],
-                    [ "images/Umgebung/Krakow-Seekueste.jpg",   "Die cote azur? ... Krakow" ],
-                    [ "images/Umgebung/Borgwall-Sturm1.jpg",    "Die Insel Borgwall im Krakower See" ],
-                    [ "images/Umgebung/Sturm.jpg",              "Schlechtes Wetter?" ],
-                    [ "images/Umgebung/Nebeltal.jpg",           "Im Durchbruchstal der Nebel" ],
-                    [ "images/Umgebung/Hafen.jpg",              "Im Hafen von ..." ],
-                    [ "images/Umgebung/Wehr.jpg",               "Das Wehr in ..." ],
-                    [ "images/Umgebung/Rostock-AlterStrom.jpg", "Rostock-Warnemünde: der alte Strom" ],
-                    [ "images/Umgebung/Schwaene.jpg",           "Schwäne" ],
-                    [ "images/Umgebung/Schwerin-Schloss.jpg",   "Das Residenzschloss in Schwerin, der heutige Landtag unseres Landes" ]
+                    [ "images/Ausflugsziele/Klatschmohn.jpg",        "Natur ..." ],
+                    [ "images/Ausflugsziele/Krakow-See1.jpg",        "Friedlicher Krakower See" ],
+                    [ "images/Ausflugsziele/See1.jpg",               "Anlegestelle" ],
+                    [ "images/Ausflugsziele/KrakowSee2.jpg",         "Anlegestelle" ],
+                    [ "images/Ausflugsziele/Krakow-Joernberg.jpg",   "Aussichtsturm am Jörnberg" ],
+                    [ "images/Ausflugsziele/Pilz.jpg",               "Wanderers Ruh am großen Pilz am Buchenberg" ],
+                    [ "images/Ausflugsziele/Buchenberg.jpg",         "Steinkreis am Buchenberg" ],
+                    [ "images/Ausflugsziele/Krakow-Waldhaus.jpg",    "Gaststätte Waldhaus in unmittelbarer Umgebung" ],
+                    [ "images/Ausflugsziele/Bootshaeuser.jpg",       "Bootshäuser am Krakower See" ],
+                    [ "images/Ausflugsziele/Aquarium.jpg",           "Aquarium" ],
+                    [ "images/Ausflugsziele/Moewen.jpg",             "Die Möwen" ],
+                    [ "images/Ausflugsziele/Park.jpg",               "Im Park" ],
+                    [ "images/Ausflugsziele/Baeren.jpg",             "Die Bären von ..." ],
+                    [ "images/Ausflugsziele/Bootshaus.jpg",          "Bootshaus ..." ],
+                    [ "images/Ausflugsziele/Kornfeld.jpg",           "Kornfeld" ],
+                    [ "images/Ausflugsziele/Badestelle.jpg",         "eine Badestelle am Krakower See" ],
+                    [ "images/Ausflugsziele/Krakow-Seekueste.jpg",   "Die cote azur? ... Krakow" ],
+                    [ "images/Ausflugsziele/Borgwall-Sturm1.jpg",    "Die Insel Borgwall im Krakower See" ],
+                    [ "images/Ausflugsziele/Sturm.jpg",              "Schlechtes Wetter?" ],
+                    [ "images/Ausflugsziele/Nebeltal.jpg",           "Im Durchbruchstal der Nebel" ],
+                    [ "images/Ausflugsziele/Hafen.jpg",              "Im Hafen von ..." ],
+                    [ "images/Ausflugsziele/Wehr.jpg",               "Das Wehr in ..." ],
+                    [ "images/Ausflugsziele/Rostock-AlterStrom.jpg", "Rostock-Warnemünde: der alte Strom" ],
+                    [ "images/Ausflugsziele/Schwaene.jpg",           "Schwäne" ],
+                    [ "images/Ausflugsziele/Schwerin-Schloss.jpg",   "Das Residenzschloss in Schwerin, der heutige Landtag unseres Landes" ]
                 ]
 
-
-                for(var i=0; i < img_urls.length; i++) {
-                    img_url  = img_urls[i][0];
-                    img_text = img_urls[i][1];
-                    $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
-                }
-                $(function(){
-                    $('#slightshow a').lightBox({
-                        overlayOpacity: 0.6,
-                        txtImage:       'Bild',
-                        txtOf:          'von',
-                        imageBtnClose: 'images/mail_delete.png',
-                        imageBtnPrev: 'images/back.png',
-                        imageBtnNext: 'images/forward.png'
-                    });
-                });
-
+                lightBox_SlideShow("slightshow", img_urls);
             </script>
         </div>
     </div>

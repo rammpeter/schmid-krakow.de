@@ -37,22 +37,7 @@
                     [ "images/Umgebung/KiefernhainWinter.jpg",  "Feriensiedlung Kiefernhain im Winter" ]
                 ]
 
-
-                for(var i=0; i < img_urls.length; i++) {
-                    img_url  = img_urls[i][0];
-                    img_text = img_urls[i][1];
-                    $('#slightshow').append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
-                }
-                $(function(){
-                    $('#slightshow a').lightBox({
-                        overlayOpacity: 0.6,
-                        txtImage:       'Bild',
-                        txtOf:          'von',
-                        imageBtnClose: 'images/mail_delete.png',
-                        imageBtnPrev: 'images/back.png',
-                        imageBtnNext: 'images/forward.png'
-                    });
-                });
+                lightBox_SlideShow("slightshow", img_urls);
 
             </script>
         </div>
