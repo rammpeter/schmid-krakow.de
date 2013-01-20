@@ -12,10 +12,15 @@
     <script type="text/javascript" src="jquery-ui-1.8.18.custom.min.js"></script>
     <link rel="stylesheet" href="jquery-ui-1.8.18.custom.css" type="text/css" media="all" />
 
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
     <script type="text/javascript" src="jquery.lightbox-0.5.js"></script>
     <link rel="stylesheet" href="jquery.lightbox-0.5.css" type="text/css" media="all" />
 
     <link rel="stylesheet" href="default.css" type="text/css" media="all" />
+
+
 
     <script type="text/javascript">
         var belegung = {};  // Initialisierung, Details kommen von DropBox
@@ -46,7 +51,7 @@
 
         var lastActiveMenuDiv = "welcome";    // zuerst gewähltes Div
 
-        function menu_call(menu_entry){
+        function menu_call(menu_entry, complete_function){
             var url = menu_entry+'.html';  // Aufgerufene Seite für Darstellung
             //$("*").css("cursor", "progress");
             $('#content').fadeOut('fast', function() {    // Ajax-Aufruf nach FadeOut
@@ -68,6 +73,8 @@
                             console.log(errmsg);
                         },
                         complete: function(){
+                            if (complete_function)
+                                complete_function();
                             //$("*").css("cursor", "auto");
                         }
 
@@ -99,7 +106,7 @@
                 txtOf:          'von',
                 imageBtnClose: 'images/mail_delete.png',
                 imageBtnPrev: 'images/back.png',
-                imageBtnNext: 'images/forward.png',
+                imageBtnNext: 'images/forward.png'
             }
 
             if (isTouchDevice())
@@ -152,16 +159,17 @@
         <tr><td><br></td></tr>
         <tr>
             <td valign="top" style="width: 190px; min-width: 190px;">
-                <table cellspacing="20px" cellpadding="0px" style="color: yellow; ">
+                <table id="navigator_table" cellspacing="20px" cellpadding="0px" style="color: yellow; ">
                     <tbody>
                         <tr><td class="menu_entry" onclick="menu_call('welcome');"      >Willkommen</td></tr>
                         <tr><td class="menu_entry" onclick="menu_call('haus_milan');"   >Haus Milan</td></tr>
                         <tr><td class="menu_entry" onclick="menu_call('haus_pinguin');" >Haus Pinguin</td></tr>
                         <tr><td class="menu_entry" onclick="menu_call('umgebung');"     >Umgebung</td></tr>
-                        <tr><td class="menu_entry" onclick="menu_call('ausflugsziele');">Ausflugsziele</td></tr>-->
+                        <tr><td class="menu_entry" onclick="menu_call('ausflugsziele');">Ausflugsziele</td></tr>
                         <tr><td class="menu_entry" onclick="menu_call('prices');"       >Die Preise</td></tr>
                         <!--<tr><td class="menu_entry" onclick="menu_call('dates');"        >Freie Termine</td></tr>-->
                         <tr><td class="menu_entry" onclick="menu_call('booking');"      >Zur Buchung</td></tr>
+                        <tr><td class="menu_entry" onclick="menu_call('anreise', function(){init_maps();} ); //initialize_maps('google_map_canvas');"      >Anreise</td></tr>
                         <tr><td class="menu_entry" onclick="menu_call('impressum');"    >Impressum</td></tr>
                     </tbody>
                 </table>

@@ -1,0 +1,34 @@
+<body>
+<div style="position: relative;">
+    <div class="shadow opaque" style="width:100%; height: 100%; background-color: #99CC99; position:absolute; top:0px; left:0px; z-index:1;">
+    </div>
+    <div id="anreise" style="position: relative; z-index: 2; padding: 10px;">
+        <div align="center" style="padding-bottom:20px;">
+            <h2>Anreise</h2>
+            Sie erreichen uns über die Autobahn A19, Abfahrt "Krakow / Linstow".
+            Folgen Sie nach der Brücke über den Krakower See rechts der Ausschilderung zur Feriensiedlung Kiefernhain.
+        </div>
+        <div align="center"  style="width:300px;height:300px; padding:20px;" id="google_map_canvas">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function init_maps(){
+        $("#google_map_canvas")
+                .css("width", parseInt($("#anreise").css("width"))-40)
+                .css("height", $("#navigator_table").css("height"));
+
+        var latlng = new google.maps.LatLng(53.6429,12.2915);
+        var myOptions = {
+            zoom: 15,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("google_map_canvas"), myOptions);
+        marker = new google.maps.Marker({map:map,position:latlng});
+        infoWindow = new google.maps.InfoWindow({content:'Ferienhäuser<br/>Milan und Pinguin'});
+        infoWindow.open(map,marker);
+    }
+</script>
+</body>
