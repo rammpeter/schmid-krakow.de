@@ -16,7 +16,7 @@
 
     <title>Ferienh&auml;user 'Milan' und 'Pinguin' in Krakow am See, Mecklenburg</title>
 
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 
     <script type="text/javascript" src="jquery.backstretch.min.js"></script>
     <script type="text/javascript" src="jquery-ui-1.8.18.custom.min.js"></script>
@@ -24,13 +24,12 @@
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-
-    <script type="text/javascript" src="jquery.lightbox-0.5.js"></script>
-    <link rel="stylesheet" href="jquery.lightbox-0.5.css" type="text/css" media="all" />
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup.css">
+    <!-- Magnific Popup core JS file -->
+    <script type="text/javascript" src="jquery.magnific-popup.min.js"></script>
 
     <link rel="stylesheet" href="default.css" type="text/css" media="all" />
-
-
 
     <script type="text/javascript">
         var belegung = {};  // Initialisierung, Details kommen von DropBox
@@ -86,6 +85,10 @@
                             if (complete_function)
                                 complete_function();
                             //$("*").css("cursor", "auto");
+                            $('.image-link').magnificPopup({
+                                type:'image',
+                                closeOnContentClick: true
+                            });
                         }
 
                 });
@@ -107,9 +110,24 @@
             for(var i=0; i < img_urls.length; i++) {
                 img_url  = img_urls[i][0];
                 img_text = img_urls[i][1];
-                $('#'+div_name).append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>');
+                $('#'+div_name).append('<a href="'+img_url+'" title="'+img_text+'"><img alt="'+img_url+'" src="'+img_url+'" height="120" class="shadow" style="margin: 10px;" /></a>')
+                        .addClass('image-gallery');
             }
 
+            $('.image-gallery').magnificPopup({
+                delegate: 'a',
+                type:'image',
+                gallery:{
+                    enabled:true,
+                    navigateByImgClick: true,
+                    preload: [0,1], // Will preload 1 - before current, and 1 after the current image
+                    tPrev: 'Vorheriges Bild (Pfeil links)', // title for left button
+                    tNext: 'Nächstes Bild (Pfeil rechts)', // title for right button
+                    tCounter: '<span class="mfp-counter">%curr% von %total%</span>' // markup of counter
+                 }
+            });
+
+            /*
             lightBox_options = {
                 overlayOpacity: 0.6,
                 txtImage:       'Bild',
@@ -123,6 +141,7 @@
                 lightBox_options['fixedNavigation'] = true;         // Navigations-Pfeile auf tablets immer einblenden
 
             $('#'+div_name+' a').lightBox(lightBox_options);
+            */
         }
 
     </script>
@@ -150,7 +169,7 @@
     </style>
 
 </head>
-<body onload="menu_call('welcome');" style="padding-left: 10px; padding-right: 10px; position: relative;">
+<body onload="menu_call('welcome'); " style="padding-left: 10px; padding-right: 10px; position: relative;">
     <div style="height: 1px; overflow: hidden">
         Urlaub Ferien Angeln Baden Ferienhaus Ferienwohnung Bungalow Unterkunft Übernachtung Mecklenburg Güstrow Krakow Krakow am See Krakower See
     </div>
@@ -161,8 +180,12 @@
                     <div class="opaque" style="position: absolute; z-index: 1; background-color: #FFFFCC; width: 100%; height: 100%;"></div>
                     <table width="100%" style="position: relative; z-index: 2;">
                         <tr>
-                            <td style="padding: 10px;"><img alt="Haus Milan" class="shadow" src="images/Milan/Milan_Titel_klein.jpg" height="100px"></td>
-                            <td style="padding: 10px;"><img alt="Haus Pinguin" class="shadow" src="images/Pinguin/Pinguin_Titel_klein.jpg" height="100px"></td>
+                            <td style="padding: 10px;"><a class="image-link" href="images/Milan/Milan_Titel.jpg" title="Haus Milan Giebelfront zur Seeseite">
+                                <img alt="Haus Milan" class="shadow" src="images/Milan/Milan_Titel_klein.jpg" height="100px">
+                            </a></td>
+                            <td style="padding: 10px;"><a class="image-link" href="images/Pinguin/Pinguin_Titel_klein.jpg" title="Haus Pinguin Eingang und Terasse">
+                                <img alt="Haus Pinguin" class="shadow" src="images/Pinguin/Pinguin_Titel_klein.jpg" height="100px">
+                            </a></td>
                             <td align="center" valign="middle"><span style="color:darkgreen; font-size: 30pt; padding: 20px;" ><b>Ferienh&auml;user 'Milan' und 'Pinguin'</b></span></td>
                         </tr>
                     </table>
