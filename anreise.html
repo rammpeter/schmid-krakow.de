@@ -14,8 +14,30 @@
     </div>
 </div>
 
+
 <script type="text/javascript">
+
     function init_maps(){
+        $("#google_map_canvas")
+            .css("width", parseInt($("#anreise").css("width"))-40)
+            .css("height", $("#navigator_table").css("height"));
+
+        var map = new google.maps.Map(
+            document.getElementById('google_map_canvas'), {
+                center: new google.maps.LatLng(53.6429,12.2915),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(53.6429,12.2915),
+            label: 'Ferienhäuser Milan und Pinguin',
+            map: map
+        });
+
+
+        /*
+        // bisheriger Code
         $("#google_map_canvas")
                 .css("width", parseInt($("#anreise").css("width"))-40)
                 .css("height", $("#navigator_table").css("height"));
@@ -30,6 +52,8 @@
         marker = new google.maps.Marker({map:map,position:latlng});
         infoWindow = new google.maps.InfoWindow({content:'Ferienhäuser<br/>Milan und Pinguin'});
         infoWindow.open(map,marker);
+
+        */
     }
 </script>
 </body>
