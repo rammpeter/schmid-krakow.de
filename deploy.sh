@@ -30,4 +30,4 @@ echo "
   lcd ../Umgebung
   mput *.*
 
-" | ftp ftp://u68187099:xz3411sum492@www.schmid-krakow.de
+" | sftp u68187099@www.schmid-krakow.de
